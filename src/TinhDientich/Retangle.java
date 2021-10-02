@@ -1,32 +1,31 @@
 package TinhDientich;
-import java.util.Scanner;
 
 public class Retangle extends  Shape{
     private double d;
     private double r;
-
-    public void setInf(double d, double r) {
-        this.d = d;
-        this.r = r;
-    }
     public double getarea(double d,double r) {
         return d*r;
     }
-    public double input(Scanner in) {
-        System.out.println("Nhap thong tin Retangle:");
-        System.out.println("Nhap chieu dai: ");
-        d = in.nextDouble();
+    public double setR(double r) {
+        this.r = r;
+        return r;
+    }
+    public double setD(double d) {
+        this.d = d;
         return d;
     }
-    public double inputR(Scanner in)
-    {
-        System.out.println("Nhap chieu rong: ");
-        r = in.nextDouble();
-        return r;
-    };
     public void printArea(double d,double r) {
         System.out.println("KQ:" +getarea(d,r));
 
     }
 
+    @Override
+    public double getChuvi(double d, double r) {
+        return 2*(d+r);
+    }
+
+    @Override
+    public void printChuvi(double d, double r) {
+        System.out.println("KQ:" +getChuvi(d,r));
+    }
 }
